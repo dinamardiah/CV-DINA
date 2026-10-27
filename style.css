@@ -4,29 +4,27 @@
     border-radius: 50%;
     object-fit: cover;
 }
+
 h2 {
-    color: #1976D2;
-    border-left: 5px solid #2196F3;
-    padding-left: 10px;
-}
-body {
-  background-color: white;
+    color: white !important;
+    background: linear-gradient(90deg, #164e7a, #287bb5);
+    border-left: 5px solid #42a5f5;
+    padding: 10px 15px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    border-radius: 8px;
 }
 
+body {
+    background-color: #f0f5fa;
+    color: #263238;
+    font-family: Arial, sans-serif;
+}
 .header {
     display: flex;
     align-items: center;
     gap: 20px;
     padding: 25px;
-}
-
-h2 {
-  background-color: black;
-}
-h2 {
-  color: white;
-  margin-top: 10px;
-margin-bottom: 12px;
 }
 
 .p {
@@ -37,18 +35,39 @@ head {
   background-color: rgb(8, 2, 90);
 }
 
-div {
-  background-color: rgb(19, 68, 117);
+.header {
+    background-color: rgb(19, 68, 117);
+    color: white;
 }
 
-div {
-  color: white;
-}
-
-.container {
+/* Layout khusus untuk bagian utama CV */
+.cv-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 25px;
+    align-items: start;
+}
+
+/* Card Bootstrap */
+.card {
+    width: 100%;
+}
+
+.card-title {
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+.card-text {
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+/* Tampilan di layar kecil */
+@media (max-width: 768px) {
+    .cv-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 .left-column,
@@ -56,11 +75,203 @@ div {
     background-color: white;
     padding: 20px;
     border-radius: 50px;
-     color: #333;
+     color: #0b0b0b;
     }
 
     .left-column p,
 .right-column p {
     line-height: 1.6;
     font-size: 15px;
+}
+
+/* Memperbaiki warna judul CV */
+h2 {
+    color: #ffffff !important;
+    background-color: #040404;
+    border-left: 5px solid #2196f3;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+/* Tampilan Card Profil */
+.card {
+    background-color: #ffffff;
+    color: #263445;
+    border: 1px solid #d5e1ef;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(23, 65, 105, 0.10);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(23, 65, 105, 0.16);
+}
+
+.card .card-title {
+    color: #174775;
+}
+
+.card .card-text {
+    color: #435468;
+}
+
+/* Tampilan Accordion */
+.accordion-item {
+    border-color: #d5e1ef;
+}
+
+.accordion-button {
+    background-color: #e5eef9;
+    color: #174775;
+    font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #d3e3f7;
+    color: #174775;
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(23, 71, 117, 0.15);
+}
+
+.accordion-body {
+    background-color: #ffffff;
+    color: #435468;
+}
+
+/* Bagian informasi portofolio */
+.info-section {
+    background-color: #eaf2fb;
+    padding: 35px;
+    border-radius: 20px;
+}
+
+/* Judul bagian informasi */
+.info-section .info-title {
+    background-color: transparent;
+    color: #174775 !important;
+    border-left: none;
+    padding: 0;
+    font-size: 30px;
+}
+
+/* Deskripsi bagian */
+.info-description {
+    color: #526579;
+    font-size: 16px;
+}
+
+/* Kartu informasi */
+.info-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border: 1px solid #d8e5f3;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(23, 71, 117, 0.08);
+    transition: transform 0.3s ease;
+}
+
+/* Efek ketika kursor diarahkan ke kartu */
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Ikon */
+.info-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+/* Judul kartu */
+.info-card h3 {
+    color: #174775;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+/* Isi kartu */
+.info-card p {
+    color: #435468;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Memperbaiki tampilan Tentang Saya */
+.info-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto !important;
+    padding: 35px;
+    background-color: #eaf2fb;
+    border-radius: 20px;
+}
+
+/* Memastikan kartu tersusun rapi */
+.info-section .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Mengatur lebar setiap kartu */
+.info-section .col-md-4 {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+}
+
+/* Mengatur isi kartu */
+.info-section .info-card {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+
+/* Tampilan di layar kecil */
+@media (max-width: 768px) {
+    .info-section .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Mempercantik Header */
+.header {
+    background: linear-gradient(135deg, #174775, #2878b5);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 35px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Foto Profil */
+.header img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Nama di Header */
+.header h1 {
+    color: white;
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Informasi Header */
+.header p {
+    color: #eaf2fb;
+    margin-bottom: 8px;
+    font-size: 16px;
 }
